@@ -1,0 +1,47 @@
+---
+# Container descriptor
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "core"
+  description: "Core skill match microservice"
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
+
+# Tracer that posts records to log
+- descriptor: "pip-services:tracer:log:default:1.0"
+
+# Performance counters that post values to log
+- descriptor: "pip-services:counters:log:default:1.0"
+
+# PostgreSQL persistence
+- descriptor: "core:persistence:postgres:default:1.0"
+  connection:
+    uri: {{POSTGRES_SERVICE_URI}}
+    host: {{POSTGRES_SERVICE_HOST}}{{#unless POSTGRES_SERVICE_HOST}}"localhost"{{/unless}}
+    port: {{POSTGRES_SERVICE_PORT}}{{#unless POSTGRES_SERVICE_PORT}}5431{{/unless}}
+    database: {{POSTGRES_DB}}{{#unless POSTGRES_DB}}"postgres"{{/unless}}
+  credential:
+    username: {{POSTGRES_USER}}{{#unless POSTGRES_USER}}"postgres"{{/unless}}
+    password: {{POSTGRES_PASSWORD}}{{#unless POSTGRES_PASSWORD}}"postgres"{{/unless}}
+
+# Service
+- descriptor: "core:service:default:default:1.0"
+
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8080{{/unless}}
+
+# HTTP controller V1
+- descriptor: "core:controller:http:default:1.0"
+  swagger:
+    enable: true
+
+# Hearbeat controller
+- descriptor: "pip-services:heartbeat-controller:http:default:1.0"
+
+# Status controller
+- descriptor: "pip-services:status-controller:http:default:1.0"
