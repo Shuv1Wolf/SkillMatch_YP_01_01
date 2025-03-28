@@ -13,7 +13,7 @@ func NewResumeSchema() *ResumeSchema {
 	c := ResumeSchema{}
 	c.ObjectSchema = *cvalid.NewObjectSchema()
 
-	c.WithOptionalProperty("user_tg_id", cconv.String)
+	c.WithOptionalProperty("id", cconv.String)
 	c.WithRequiredProperty("skills", cconv.String)
 	c.WithOptionalProperty("region", cconv.String)
 	c.WithRequiredProperty("salary", cconv.String)

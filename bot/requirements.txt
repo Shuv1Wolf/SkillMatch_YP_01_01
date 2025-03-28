@@ -1,0 +1,4 @@
+aiogram>=3.0
+python-docx
+PyPDF2
+python-dotenv

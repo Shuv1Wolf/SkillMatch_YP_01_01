@@ -53,7 +53,7 @@ func (c *CoreCommandSet) makeGetResumeByIdCommand() ccmd.ICommand {
 
 func (c *CoreCommandSet) makeFindJobCommand() ccmd.ICommand {
 	return ccmd.NewCommand(
-		"get_resume",
+		"find_job",
 		cvalid.NewObjectSchema().
 			WithRequiredProperty("user_id", cconv.String),
 		func(ctx context.Context, args *exec.Parameters) (result any, err error) {

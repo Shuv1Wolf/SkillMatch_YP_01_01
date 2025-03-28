@@ -14,6 +14,7 @@ require (
 	github.com/jackc/pgx/v4 v4.18.1 // indirect
 	github.com/jackc/puddle v1.3.0 // indirect
 	github.com/jinzhu/copier v0.3.5 // indirect
+	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/pip-services4/pip-services4-go/pip-services4-commons-go v0.0.1-2 // indirect
 	github.com/pip-services4/pip-services4-go/pip-services4-components-go v0.0.1-2 // indirect
 	github.com/pip-services4/pip-services4-go/pip-services4-config-go v0.0.0-20240325121312-3b0195749a25 // indirect
@@ -27,6 +28,7 @@ require (
 	github.com/pip-services4/pip-services4-go/pip-services4-postgres-go v0.0.1-2 // indirect
 	github.com/pip-services4/pip-services4-go/pip-services4-rpc-go v0.0.1-3 // indirect
 	github.com/rs/cors v1.9.0 // indirect
+	github.com/sashabaranov/go-openai v1.38.1 // indirect
 	goji.io v2.0.2+incompatible // indirect
 	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/text v0.7.0 // indirect
